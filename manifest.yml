@@ -1,0 +1,5 @@
+---
+applications:
+  - name: chsbdemo
+    random-route: true
+    path: target/chsbdemo-0.0.1-SNAPSHOT.jar

@@ -1,0 +1,16 @@
+Using Custom User Provided Service
+
+cf create-user-provided-service myservice -p '{"username":"larsje","password":"larsje123","url":"https://my.service.url:8681/"}'
+cf bind-service chsbdemo myservice
+cf env chsbdemo
+cf restage chsbdemo
+
+cf unbind-service chsbdemo myservice
+cf delete-service myservice
+
+Using Credhub Service Broker
+
+cf create-service credhub default myservice -c '{"username":"larsje","password":"larsje123","url":"https://my.service.url:8681/"}'
+cf bind-service chsbdemo myservice
+cf env chsbdemo
+cf restage chsbdemo
